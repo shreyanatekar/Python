@@ -1,9 +1,24 @@
 # A first Python script
-import sys # Load a library module
-#print(sys.platform)
-#print(2 ** 100) # Raise 2 to a power
-x = 'Spam!'
-#print(x * 8) # String repetition
-
 address = ["abc path", "apt 123", "New York"]
-pins =
+pins = {"Mike":1234, "Jack":2222, "Ann":3333}
+
+pin = int(input("Enter your pin: "))
+
+def find_in_file(f):
+    myFile = open("Sample.txt")
+    fruits = myFile.read()
+    fruits = fruits.splitlines()
+    if f in fruits:
+        return "That fruit is in the file"
+    else:
+        return "Fruit not in the file"
+
+if pin in pins.values():
+    fruit = input("Enter fruit: ")
+    print(find_in_file(fruit))
+else:
+    print("Incorrect pin.")
+    print("Only these can access the file: ")
+    for key in pins.keys():
+        print(key)
+
